@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanggam Sidabutar | Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .navbar {
+      width: 100%;
+      background: #181a20;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .navbar-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 2rem;
+    }
+    .navbar-brand {
+      color: #0ff;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar-menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .navbar-menu li a:hover {
+      color: #0ff;
+    }
+    .burger {
+      display: none;
+      background: none;
+      border: none;
+      color: #0ff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    @media (max-width: 700px) {
+      .navbar-container {
+        padding: 0.5rem 1rem;
+      }
+      .navbar-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #181a20;
+        flex-direction: column;
+        width: 180px;
+        gap: 1rem;
+        padding: 1rem 0;
+        display: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .navbar-menu.active {
+        display: flex;
+      }
+      .burger {
+        display: block;
+      }
+    }
+    body {
+      padding-top: 70px;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f1115;
+      color: #ffffff;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .profile {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #0ff;
+      box-shadow: 0 0 15px #0ff;
+      object-fit: cover;
+      object-position: center -40px;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-info h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .profile-info p.title {
+      color: #0ff;
+      font-weight: 600;
+      margin: 0.3rem 0;
+    }
+    .section {
+      margin-top: 2rem;
+    }
+    .section h2 {
+      border-bottom: 2px solid #0ff;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    .skills ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.5rem;
+    }
+    .skills li::before {
+      content: '✦';
+      margin-right: 0.5rem;
+      color: #0ff;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .project-card {
+      background-color: #1a1c22;
+      padding: 1rem;
+      border-left: 3px solid #0ff;
+      border-radius: 6px;
+    }
+    .project-card img {
+      width: 100%;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #444;
+    }
+    .contact a {
+      display: block;
+      color: #0ff;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <span class="navbar-brand">Sanggam Sidabutar</span>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu">&#9776;</button>
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Project</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container" id="home">
+    <div class="profile">
+      <img src="https://g.top4top.io/p_3479e6rfs1.jpg" alt="Profile Photo" />
+      <div class="profile-info">
+        <h1>Sanggam Sidabutar</h1>
+        <p class="title">Cybersecurity Enthusiast | Penetration Tester | Red Team Learner</p>
+        <p>A passionate IT student with a strong interest in cybersecurity, ethical hacking, penetration testing, and vulnerability assessment.
+          Always eager to learn new technologies and stay updated with the latest trends in information security.
+          Experienced in conducting hands-on security assessments, simulating real-world attacks, and developing custom security tools.
+          Enjoys collaborating in teams, sharing knowledge, and participating in cybersecurity communities and competitions.
+          Motivated to help organizations strengthen their defenses and promote a culture of security awareness.</p>
+      </div>
+    </div>
+
+    <div class="section skills" id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Penetration Testing (Metasploit, Burp Suite, Nmap)</li>
+        <li>Network and Web Application Security Testing</li>
+        <li>Scripting & Automation (Python, Bash)</li>
+        <li>Vulnerability Scanning & Analysis (Nikto, Nuclei, John the Ripper)</li>
+        <li>Basic Post-Exploitation and Pivoting Techniques</li>
+      </ul>
+    </div>
+
+    <div class="section projects" id="projects">
+      <h2>Project Highlights</h2>
+      <div class="project-card">
+        <strong>Simulated Exploitation of EternalBlue (CVE-2017-0144)</strong>
+        <img src="https://b.top4top.io/p_3479ibns31.jpg" alt="EternalBlue Screenshot">
+      </div>
+      <div class="project-card">
+        <strong>Web Spider & Vulnerability Scanner Automation with Python</strong>
+        <img src="https://i.top4top.io/p_3479xdg0f1.png" alt="Web Spider Python Screenshot">
+      </div>
+      <div class="project-card">
+        <strong>DDoS Simulation Tool using Scapy & Sockets</strong>
+        <img src="https://k.top4top.io/p_347963arb1.png" alt="DDoS Simulation Screenshot">
+      </div>
+      <div class="project-card">
+        <strong>Exploitation of UnrealIRCd Backdoor (CVE-2010-2075)</strong>
+        <img src="https://e.top4top.io/p_3479ij6u61.png" alt="UnrealIRCd Exploit Screenshot">
+      </div>
+    </div>
+
+    <div class="section education">
+      <h2>Education</h2>
+      <p>Associate Degree (D3) in Information Technology,<br>University Mandiri Bina Prestasi</p>
+    </div>
+
+    <div class="section contact" id="contacts">
+      <h2>Contact</h2>
+      <a href="mailto:sanggamsidabutar46@gmail.com">sanggamsidabutar46@gmail.com</a>
+      <a href="https://www.linkedin.com/in/sanggam-sidabutar-88b8ab275/" target="_blank">LinkedIn Profile</a>
+      <a href="https://github.com/sidabutar1337" target="_blank">GitHub Profile</a>
+    </div>
+  </div>
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navbarMenu = document.getElementById('navbarMenu');
+    burgerBtn.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+    });
+    // Optional: close menu on link click (mobile UX)
+    document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navbarMenu.classList.remove('active');
+      });
+    });
+    // Smooth scroll with offset for fixed navbar
+    document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const y = target.getBoundingClientRect().top + window.pageYOffset - 70;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
